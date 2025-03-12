@@ -1,0 +1,16 @@
+{
+  "name": "preact-test-4",
+  "version": "0.0.1",
+  "description": "Preact + HTM nobuild test app",
+  "license": "ISC",
+  "author": "Joseph Martin",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "htm": "^3.1.1",
+    "preact": "^10.26.4"
+  }
+}
