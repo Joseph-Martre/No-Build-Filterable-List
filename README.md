@@ -1,15 +1,37 @@
-This is a re-implementation of the filterable list app from the official React docs:  
-https://react.dev/learn/thinking-in-react#step-5-add-inverse-data-flow
+# **No-Build Filterable List (Preact + HTM + JSDoc)**  
 
-This app uses Preact + HTM + JSDoc instead of React + TSX + TypeScript. The entire script can be run as is, without any transpilation. This is fully nobuild.  
-Should you do this in prod? Probably not. With HTM, the template strings are parsed at runtime instead of compile time. Not very efficient for the client.  
-Also, shipping code that's not been minified or at least stripped of whitespaces and comments isn't respectful of bandwidth in general.  
-Maybe you're a FOSS fanatic and want your code to be as transparent as possible.  
-Or maybe you think it's cool that modern JS can run what is essentially JSX directly on the browser. I know I do!  
+This is a **re-implementation** of the **Filterable List** example from the official React documentation:  
+🔗 [Thinking in React – Step 5: Add Inverse Data Flow](https://react.dev/learn/thinking-in-react#step-5-add-inverse-data-flow)  
 
-Here's a live version of the app:  
-https://nimble-smakager-14389f.netlify.app/  
+## **What's Different?**  
 
-I encourage you to inpect that page's source code and marvel at client-side JSX!  
+Instead of **React + TSX + TypeScript**, this app uses:  
+✅ **Preact** – Lightweight alternative to React  
+✅ **HTM** – JSX-like templates without a build step  
+✅ **JSDoc** – TypeScript-like autocompletion without compilation  
 
-Check out HTM: https://github.com/developit/htm  
+The entire script **runs as-is** in the browser—no transpilation, no bundling.  
+This is **fully no-build.**  
+
+## **Should You Use This in Production?**  
+
+⚠️ **Probably not.** Here’s why:  
+- **HTM parses template strings at runtime**, making it less efficient than JSX (which is compiled).  
+- **No minification or whitespace stripping**, meaning larger files and unnecessary bandwidth use.  
+
+That said, there are **reasons** you might want to try this approach:  
+- **You love FOSS transparency** – Every line of code is visible and human-readable.  
+- **You're experimenting** – Modern JS can now run something **very close to JSX** natively.  
+- **You just think it's cool** – And so do I!
+
+## **Live Demo**  
+
+🚀 **Check out the live version of this app:**  
+🔗 [Live Demo on Netlify](https://nimble-smakager-14389f.netlify.app/)  
+
+**I encourage you to inspect the page's source code** and marvel at **client-side JSX without a compiler!**  
+
+## **Learn More**  
+
+🔹 **HTM (JSX-like syntax in template literals)**  
+[👉 HTM GitHub Repo](https://github.com/developit/htm)  
