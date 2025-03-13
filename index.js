@@ -117,7 +117,10 @@ const ProductRows = ({ products = [] }) => {
 const FilterableProductsTable = ({ products = [] }) => {
   const [search, setSearch] = useState("");
   const [inStockOnly, setInStockOnly] = useState(false);
-
+  /**
+   * @param {InputEvent & { target: HTMLInputElement }} e
+   * @returns {void}
+   */
   const handleSearch = (e) => setSearch(e.target.value);
   const toggleInStockOnly = () => setInStockOnly((t) => !t);
 
