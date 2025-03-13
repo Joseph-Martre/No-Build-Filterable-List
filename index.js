@@ -90,11 +90,10 @@ const createProductFilter =
   };
 
 /**
- * @param {{ products: Product[] | undefined }} props
- * @returns {VNode | null}
+ * @param {{ products: Product[] }} props
+ * @returns {VNode}
  */
-const ProductRows = ({ products }) => {
-  if (!products) return null;
+const ProductRows = ({ products = [] }) => {
   return html`${products.map(
     (product) =>
       html`<tr key=${product.id}>
@@ -111,7 +110,11 @@ const ProductRows = ({ products }) => {
   )}`;
 };
 
-const FilterableProductsTable = () => {
+/**
+ * @param {{ products: Product[] }} props
+ * @returns {VNode}
+ */
+const FilterableProductsTable = ({ products = [] }) => {
   const [search, setSearch] = useState("");
   const [inStockOnly, setInStockOnly] = useState(false);
 
@@ -120,7 +123,7 @@ const FilterableProductsTable = () => {
 
   const productFilter = createProductFilter(search, inStockOnly);
 
-  const filteredProducts = PRODUCTS.filter(productFilter);
+  const filteredProducts = products.filter(productFilter);
   const groupedProducts = Object.groupBy(
     filteredProducts,
     (product) => product.category,
@@ -188,7 +191,7 @@ const FilterableProductsTable = () => {
 const App = () => {
   return html`
     <section class="fullscreen">
-      <${FilterableProductsTable} />
+      <${FilterableProductsTable} products=${PRODUCTS} />
     </section>
   `;
 };
