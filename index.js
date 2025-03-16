@@ -64,7 +64,7 @@ const displayedProductProps = ["name", "price"];
  * @param {string} search
  * @returns {boolean}
  */
-const isProductSearched = (product, search = "") => {
+const isProductSearched = (product, search) => {
   return product.name.toLowerCase().includes(search.toLowerCase());
 };
 
@@ -79,15 +79,13 @@ const isProductInStock = (product) => product.stocked;
  * @param {boolean} inStockOnly
  * @returns {(product: Product) => boolean}
  */
-const createProductFilter =
-  (search = "", inStockOnly) =>
-  (product) => {
-    const matchesSearch = isProductSearched(product, search);
-    if (inStockOnly) {
-      return isProductInStock(product) && matchesSearch;
-    }
-    return matchesSearch;
-  };
+const createProductFilter = (search, inStockOnly) => (product) => {
+  const matchesSearch = isProductSearched(product, search);
+  if (inStockOnly) {
+    return isProductInStock(product) && matchesSearch;
+  }
+  return matchesSearch;
+};
 
 /**
  * @param {{ products: Product[] }} props
