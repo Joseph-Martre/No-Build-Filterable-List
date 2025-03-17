@@ -9,8 +9,9 @@ import { html, render, useState } from "htm/preact";
  * @returns {string}
  */
 const capitalizeFirstLetter = (string) => {
-  if (string.length === 0) return string;
-  return `${string[0].toUpperCase()}${string.slice(1)}`;
+  const firstLetter = string[0];
+  if (!firstLetter) return string;
+  return `${firstLetter.toUpperCase()}${string.slice(1)}`;
 };
 
 /**
